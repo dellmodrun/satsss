@@ -73,6 +73,9 @@ async function pricePayload(mint) {
 
 async function recentFills(mint) {
   const pair = await market(mint);
+  const currentPrice = Number(pair.priceUsd);
+  const nativePrice = Number(pair.priceNative);
+  const solUsd = nativePrice > 0 ? currentPrice / nativePrice : 0;
   const signatures = await rpc("getSignaturesForAddress", [pair.pairAddress, {
     limit: 20,
     commitment: "confirmed",
@@ -115,13 +118,21 @@ async function recentFills(mint) {
     const selected = candidates.find(candidate => signerKeys.has(candidate.owner))
       || candidates.sort((a, b) => Math.abs(a.delta) - Math.abs(b.delta))[0];
     if (!selected) return;
+    const accountKeys = transaction.transaction?.message?.accountKeys || [];
+    const signerIndex = accountKeys.findIndex(key => String(key?.pubkey ?? key) === selected.owner);
+    const lamportDelta = signerIndex >= 0
+      ? Math.abs(Number(transaction.meta.postBalances?.[signerIndex] || 0) - Number(transaction.meta.preBalances?.[signerIndex] || 0))
+      : 0;
+    const observedPrice = lamportDelta > 0 && solUsd > 0
+      ? (lamportDelta / 1_000_000_000) * solUsd / Math.abs(selected.delta)
+      : currentPrice;
     items.push({
       txHash: signatures[index].signature,
       blockUnixTime: transaction.blockTime || signatures[index].blockTime,
       side: selected.delta > 0 ? "buy" : "sell",
       owner: selected.owner,
       from: {},
-      to: { address: mint, uiAmount: Math.abs(selected.delta), price: Number(pair.priceUsd) },
+      to: { address: mint, uiAmount: Math.abs(selected.delta), price: observedPrice },
     });
   });
   return { data: { items } };
@@ -129,13 +140,21 @@ async function recentFills(mint) {
 
 async function minuteCandles(mint) {
   const pair = await market(mint);
-  const response = await nativeFetch(
-    `${geckoBase}/networks/solana/pools/${encodeURIComponent(pair.pairAddress)}/ohlcv/minute?aggregate=1&limit=100&currency=usd&token=base`,
-  );
-  const body = await response.json();
-  if (!response.ok) throw new Error(`OHLCV ${response.status}`);
-  const list = body?.data?.attributes?.ohlcv_list || [];
-  return { data: { items: list.map(row => ({ unixTime: row[0], c: row[4] })) } };
+  try {
+    const response = await nativeFetch(
+      `${geckoBase}/networks/solana/pools/${encodeURIComponent(pair.pairAddress)}/ohlcv/minute?aggregate=1&limit=100&currency=usd&token=base`,
+    );
+    const body = await response.json();
+    if (!response.ok) throw new Error(`OHLCV ${response.status}`);
+    const list = body?.data?.attributes?.ohlcv_list || [];
+    if (list.length) return { data: { items: list.map(row => ({ unixTime: row[0], c: row[4] })) } };
+  } catch (error) {
+    console.info("OHLCV unavailable; deriving the live trace from confirmed fills", error.message);
+  }
+  const fills = await recentFills(mint);
+  return { data: { items: (fills.data?.items || [])
+    .filter(item => Number.isFinite(Number(item.to?.price)) && Number(item.to.price) > 0)
+    .map(item => ({ unixTime: item.blockUnixTime, c: Number(item.to.price) })) } };
 }
 
 async function holders(mint) {
