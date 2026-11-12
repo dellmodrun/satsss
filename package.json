@@ -1,5 +1,5 @@
 {
-  "name": "zatoshi-model-local",
+  "name": "sats-model-local",
   "private": true,
   "type": "module",
   "scripts": {

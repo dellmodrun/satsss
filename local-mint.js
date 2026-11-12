@@ -1,7 +1,7 @@
 (() => {
   const mint = null;
   const originalFetch = window.fetch.bind(window);
-  window.__ZATOSHI_LOCAL_MINT__ = mint;
+  window.__SATS_LOCAL_MINT__ = mint;
 
   window.fetch = (input, init = {}) => {
     const url = typeof input === 'string' ? input : input?.url || '';

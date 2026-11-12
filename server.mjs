@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('.', import.meta.url));
 const host = '127.0.0.1';
 const port = Number(process.env.PORT || 4326);
-const origin = 'https://zatoshi-model.com';
+const origin = 'https://sats-model.com';
 const mime = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -100,5 +100,5 @@ createServer(async (request, response) => {
   }
   createReadStream(file).pipe(response);
 }).listen(port, host, () => {
-  console.log(`zatoshi local frontend: http://${host}:${port}/`);
+  console.log(`sats local frontend: http://${host}:${port}/`);
 });
