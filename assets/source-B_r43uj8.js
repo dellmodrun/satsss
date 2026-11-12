@@ -1,0 +1,1 @@
+import{t as e}from"./Shell-CAvqGAgs.js";import{_ as t}from"./index-Bu1onIBs.js";import{n,t as r}from"./Bits-CqAjjfKs.js";import{t as i}from"./idl-oGOiRntu.js";var a=t();function o(){return(0,a.jsxs)(e,{title:`Source listing`,children:[(0,a.jsx)(n,{children:`idl.json`}),(0,a.jsx)(r,{children:JSON.stringify(i,null,2)})]})}export{o as component};

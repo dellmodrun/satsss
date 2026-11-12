@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&amp;family=Arimo:wght@400;700&amp;family=Cousine:wght@400;700&amp;display=swap" data-precedence="default"/><link rel="stylesheet" href="/assets/styles-CR_D-fOd.css" data-precedence="default"/><title>zatoshi</title><link rel="modulepreload" href="/assets/index-Bu1onIBs.js"/><link rel="modulepreload" href="/assets/files-vhmrHCB0.js"/><link rel="modulepreload" href="/assets/Shell-CAvqGAgs.js"/><link rel="modulepreload" href="/assets/Bits-CqAjjfKs.js"/><link rel="modulepreload" href="/assets/stateRows-7xbm2Pv_.js"/><link rel="modulepreload" href="/assets/idl-oGOiRntu.js"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="icon" type="image/png" href="/favicon.png"/><script defer src="/~flock.js" data-proxy-url="/~api/analytics"></script><script defer src="/__l5e/events.270c78a44fc53e7b.js" data-artifact-kind="dwl_content_hash" data-artifact-id="f8eb8ec68a3da80c95fc11bf786f7305b895508c27787041f30284aa6a2dc9f2" data-commit-sha="7760fb5838be6a52db44d5589a79fbc69628a28d" data-context-token="v1.eyJwcm9qZWN0X2lkIjoibG92cF82ZnRid2F2dmt5OTJnczY3am4waDdlZnl6NiIsImFydGlmYWN0X2tpbmQiOiJkd2xfY29udGVudF9oYXNoIiwiYXJ0aWZhY3RfaWQiOiJmOGViOGVjNjhhM2RhODBjOTVmYzExYmY3ODZmNzMwNWI4OTU1MDhjMjc3ODcwNDFmMzAyODRhYTZhMmRjOWYyIiwiY29tbWl0X3NoYSI6Ijc3NjBmYjU4MzhiZTZhNTJkYjQ0ZDU1ODlhNzlmYmM2OTYyOGEyOGQiLCJleHAiOjE3OTY0NTc4NTB9.5o14jAt02blGRhZ40SLwVyfIihIlxJqY3N3O00sB1J4" data-autocapture="1" data-consent="1"></script><meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_6ftbwavvky92gs67jn0h7efyz6/075acf24b857ff999da92fe600a10737_1793863545205.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_6ftbwavvky92gs67jn0h7efyz6/075acf24b857ff999da92fe600a10737_1793863545205.png"></head><body><!--$--><div class="hdr"><div class="hdr-left"><span class="t-crumb">zatoshi</span><span class="t-nav ink3">/</span><a class="t-crumb" href="/paper">Computer Science &gt; Cryptography and Security</a></div><nav class="hdr-nav t-nav"><span style="display:flex"><a class="" href="/paper">paper</a></span><span style="display:flex"><span class="sep">/</span><a class="" href="/source">source</a></span><span style="display:flex"><span class="sep">/</span><a class="active active" href="/files" data-status="active" aria-current="page">files</a></span><span style="display:flex"><span class="sep">/</span><a class="" href="/zats">zats</a></span><span style="display:flex"><span class="sep">/</span><a class="" href="/notes">notes</a></span><span style="display:flex"><span class="sep">/</span><a class="" href="/verify">verify</a></span><span class="sep">/</span><a href="https://x.com/zatoshimodel" target="_blank" rel="noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a></nav></div><div class="body"><div class="main"><h1 class="t-page">Files</h1><p class="para">Machine readable forms of what this site displays. Each block is generated from the readings at the moment the page rendered.</p><div class="sec-head">state.json</div><pre class="code">{
+  &quot;mint&quot;: null,
+  &quot;pin&quot;: null,
+  &quot;supply&quot;: null,
+  &quot;decimals&quot;: null,
+  &quot;zats per unit&quot;: null,
+  &quot;price&quot;: null,
+  &quot;reading&quot;: null,
+  &quot;dust burned&quot;: null,
+  &quot;fee total usd&quot;: null,
+  &quot;reserve zats&quot;: null,
+  &quot;floor usd&quot;: null,
+  &quot;note count&quot;: null,
+  &quot;nullifier count&quot;: null,
+  &quot;tree depth&quot;: null,
+  &quot;fills seen&quot;: null,
+  &quot;holders&quot;: null,
+  &quot;liquidity usd&quot;: null,
+  &quot;volume 24h usd&quot;: null,
+  &quot;trades 24h&quot;: null,
+  &quot;zcash height&quot;: null,
+  &quot;zcash tip hash&quot;: null,
+  &quot;solana slot&quot;: null
+}</pre><div class="sec-head">idl.json</div><pre class="code">{
+  &quot;name&quot;: &quot;zatoshi&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;instructions&quot;: [
+    {
+      &quot;name&quot;: &quot;initialize&quot;,
+      &quot;accounts&quot;: [
+        {
+          &quot;name&quot;: &quot;state&quot;,
+          &quot;isMut&quot;: true,
+          &quot;isSigner&quot;: false
+        },
+        {
+          &quot;name&quot;: &quot;mint&quot;,
+          &quot;isMut&quot;: false,
+          &quot;isSigner&quot;: false
+        },
+        {
+          &quot;name&quot;: &quot;authority&quot;,
+          &quot;isMut&quot;: true,
+          &quot;isSigner&quot;: true
+        },
+        {
+          &quot;name&quot;: &quot;system_program&quot;,
+          &quot;isMut&quot;: false,
+          &quot;isSigner&quot;: false
+        }
+      ],
+      &quot;args&quot;: [
+        {
+          &quot;name&quot;: &quot;pin&quot;,
+          &quot;type&quot;: &quot;u64&quot;
+        }
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;fill&quot;,
+      &quot;accounts&quot;: [
+        {
+          &quot;name&quot;: &quot;state&quot;,
+          &quot;isMut&quot;: true,
+          &quot;isSigner&quot;: false
+        },
+        {
+          &quot;name&quot;: &quot;mint&quot;,
+          &quot;isMut&quot;: true,
+          &quot;isSigner&quot;: false
+        }
+      ],
+      &quot;args&quot;: [
+        {
+          &quot;name&quot;: &quot;amount&quot;,
+          &quot;type&quot;: &quot;u64&quot;
+        },
+        {
+          &quot;name&quot;: &quot;side&quot;,
+          &quot;type&quot;: &quot;u8&quot;
+        }
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;append_header&quot;,
+      &quot;accounts&quot;: [
+        {
+          &quot;name&quot;: &quot;state&quot;,
+          &quot;isMut&quot;: true,
+          &quot;isSigner&quot;: false
+        },
+        {
+          &quot;name&quot;: &quot;witness&quot;,
+          &quot;isMut&quot;: false,
+          &quot;isSigner&quot;: true
+        }
+      ],
+      &quot;args&quot;: [
+        {
+          &quot;name&quot;: &quot;header&quot;,
+          &quot;type&quot;: &quot;bytes&quot;
+        }
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;memo&quot;,
+      &quot;accounts&quot;: [
+        {
+          &quot;name&quot;: &quot;state&quot;,
+          &quot;isMut&quot;: true,
+          &quot;isSigner&quot;: false
+        }
+      ],
+      &quot;args&quot;: [
+        {
+          &quot;name&quot;: &quot;weight&quot;,
+          &quot;type&quot;: &quot;u64&quot;
+        },
+        {
+          &quot;name&quot;: &quot;header_index&quot;,
+          &quot;type&quot;: &quot;u32&quot;
+        }
+      ]
+    }
+  ],
+  &quot;accounts&quot;: [
+    {
+      &quot;name&quot;: &quot;State&quot;,
+      &quot;type&quot;: {
+        &quot;kind&quot;: &quot;struct&quot;,
+        &quot;fields&quot;: [
+          {
+            &quot;name&quot;: &quot;discriminator&quot;,
+            &quot;type&quot;: {
+              &quot;array&quot;: [
+                &quot;u8&quot;,
+                8
+              ]
+            }
+          },
+          {
+            &quot;name&quot;: &quot;mint&quot;,
+            &quot;type&quot;: &quot;pubkey&quot;
+          },
+          {
+            &quot;name&quot;: &quot;pin&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;supply&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;dust&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;reserve&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;note_count&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;nullifier_count&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;tree_root&quot;,
+            &quot;type&quot;: {
+              &quot;array&quot;: [
+                &quot;u8&quot;,
+                32
+              ]
+            }
+          },
+          {
+            &quot;name&quot;: &quot;header_tip&quot;,
+            &quot;type&quot;: {
+              &quot;array&quot;: [
+                &quot;u8&quot;,
+                32
+              ]
+            }
+          },
+          {
+            &quot;name&quot;: &quot;header_height&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;fill_count&quot;,
+            &quot;type&quot;: &quot;u64&quot;
+          },
+          {
+            &quot;name&quot;: &quot;bump&quot;,
+            &quot;type&quot;: &quot;u8&quot;
+          },
+          {
+            &quot;name&quot;: &quot;reserved&quot;,
+            &quot;type&quot;: {
+              &quot;array&quot;: [
+                &quot;u8&quot;,
+                11
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}</pre><div class="sec-head">fills.json</div><pre class="code">[]</pre><div class="sec-head">headers.json</div><pre class="code">{
+  &quot;height&quot;: null,
+  &quot;hash&quot;: null,
+  &quot;time&quot;: null
+}</pre><div class="sec-head">zatoshi.bib</div><pre class="code">@misc{zatoshi, title={zatoshi: A Supply Pinned to One Hundred Million Zats}, author={Pin and Witness and Substrate}, note={program derived address}, howpublished={}}</pre></div></div><aside class="side"><div class="side-sec"><div class="row-head"><span class="t-head">Access Paper:</span></div><div class="t-nav"><a href="/paper">View paper</a><a href="/source">Source listing</a><a href="/account">Account map</a><a class="active" href="/files" data-status="active" aria-current="page">Files</a></div><a class="t-small" href="/verify">view license</a></div><div class="side-sec"><div class="t-head">Current reading:</div><div class="gap8"></div><span class="t-read"></span><div class="t-small ink3">price × supply, refreshed each second</div><div class="t-small ink3">last tick <span class="mono"></span></div></div><div class="side-sec t-nav"><div class="t-head">Appendices:</div><a href="/paper">Extended abstract</a><a href="/state">Live state</a><a href="/zats">Quantization</a><a href="/reserve">Reserve</a><a href="/memo">Memo rule</a><a href="/headers">Header chain</a><a href="/tree">Note tree</a><a href="/account">Account</a><a href="/fills">Fill log</a><a href="/fill">One fill</a><a class="active" href="/files" data-status="active" aria-current="page">Files</a><a href="/verify">Verification</a><a href="/notes">Dev notes</a></div><div class="side-sec t-small"><div class="t-head">Current browse context:</div><div>cs.CR</div><div class="inline"><a href="/tree">&lt; prev</a> | <a href="/zats">next &gt;</a></div><div class="inline"><a href="/fills">new</a> | <a href="/fill">recent</a> |</div><div>Change to browse by:</div><div class="inline" style="padding-left:16px"><a href="/paper">cs</a></div><div class="inline" style="padding-left:32px"><a href="/headers">cs.DC</a></div></div><div class="side-sec t-nav"><div class="t-head">References &amp; Verification</div></div><div class="side-sec"><a class="t-head active" href="/files" data-status="active" aria-current="page">Export BibTeX entry</a></div><div class="side-sec"><div class="t-head">Program state:</div><div class="kv"><span class="t-nav">state</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">pin</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">supply</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">zats per unit</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">dust</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">reserve</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">notes</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">nullified</span><span class="t-mono v"></span></div></div><div class="side-sec"><div class="t-head">Reads per second:</div><div class="kv"><span class="t-nav">price</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">chain</span><span class="t-mono v"></span></div><div class="kv"><span class="t-nav">fills seen</span><span class="t-mono v"></span></div></div></aside><script>(function(a,f){let l;try{l=JSON.parse(sessionStorage.getItem(a)||"{}")}catch{return}const n=l?.[f||history.state?.__TSR_key];let c=!1;for(const t in n){const e=n[t],o=e?.scrollX,s=e?.scrollY;if(Number.isFinite(o)&&Number.isFinite(s)){if(t==="window")scrollTo(o,s),c=!0;else if(t)try{const r=document.querySelector(t);r&&(r.scrollLeft=o,r.scrollTop=s)}catch{}}}if(c)return;const i=location.hash.slice(1);if(i){const t=history.state?.__hashScrollIntoViewOptions??!0;if(t){const e=document.getElementById(i);e&&e.scrollIntoView(t)}return}scrollTo(0,0)})("tsr-scroll-restoration-v1_3");document.currentScript.remove()</script><!--/$--><script data-tsr-stream-part="">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/assets/index-Bu1onIBs.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"/assets/index-Bu1onIBs.js"}}]},"/files":$R[8]={preloads:$R[9]=["/assets/files-vhmrHCB0.js","/assets/Shell-CAvqGAgs.js","/assets/Bits-CqAjjfKs.js","/assets/stateRows-7xbm2Pv_.js","/assets/idl-oGOiRntu.js"]}}},matches:$R[10]=[$R[11]={i:"__root__ ",u:1793865850575,s:"success",ssr:!0},$R[12]={i:" files files",u:1793865850575,s:"success",ssr:!0}]})($R["tsr"]);$_TSR.e();{let s=document.currentScript,p;while((p=s.previousElementSibling)&&p.hasAttribute('data-tsr-stream-part'))p.remove();s.remove()}</script><script type="module" async="" src="/assets/index-Bu1onIBs.js"></script><script>document.currentScript.remove();/*$tsr-stream-boundary*/</script></body></html>

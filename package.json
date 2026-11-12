@@ -1,0 +1,12 @@
+{
+  "name": "zatoshi-model-local",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check local-mint.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
