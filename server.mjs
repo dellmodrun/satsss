@@ -83,7 +83,10 @@ createServer(async (request, response) => {
     response.writeHead(200, { 'content-type': 'text/javascript; charset=utf-8', 'cache-control': 'no-store' });
     return response.end('/* analytics disabled in local preview */');
   }
-  const file = safeFile(url.pathname);
+  const staticPath = url.pathname === '/satsss'
+    ? '/'
+    : url.pathname.replace(/^\/satsss(?=\/)/, '');
+  const file = safeFile(staticPath);
   if (!file) {
     response.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
     return response.end('Not found');
