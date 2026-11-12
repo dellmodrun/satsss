@@ -1,5 +1,5 @@
 (() => {
-  const mint = "73kHgX4SwpoWCPXwcs51nQma9otu6oNWziWYTndXpump";
+  const mint = null;
   const originalFetch = window.fetch.bind(window);
   window.__SATS_LOCAL_MINT__ = mint;
 
