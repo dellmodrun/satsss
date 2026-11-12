@@ -12,3 +12,5 @@ html,body{background:#080808;color:#F2F0EA}
 table.tb tbody tr:hover td{background:#18130D}
 .code{background:#151515;border-color:#2A2A2A}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:1px solid #F7931A;outline-offset:2px}
+
+.brand-home,.brand-home:visited{color:#F2F0EA;text-decoration:none}.brand-home:hover{color:#F7931A;text-decoration:underline}
